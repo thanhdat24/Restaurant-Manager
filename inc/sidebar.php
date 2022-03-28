@@ -69,18 +69,6 @@ $page = $_GET['page'];
                                 <?php endif; ?>
                             </p>
                         </a>
-                        <!-- <?php if (isset($item['subitems'])) : ?>
-                            <?php foreach ($item['subitems'] as $key => $subitem) : ?>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href=<?= $subitem['link'] ?> class="nav-link <?php if ($page === $subitem['name']) echo "active"; ?>">
-                                            <i class="<?= $subitem['icon'] ?> nav-icon ml-3"></i>
-                                            <p><?= $subitem['title'] ?></p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            <?php endforeach; ?>
-                        <?php endif ?> -->
                     </li>
                 <?php endforeach; ?>
             </ul>

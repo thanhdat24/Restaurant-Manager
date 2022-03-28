@@ -106,7 +106,7 @@ $data = db_query("select * from khachhang");
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                                                            <a href="page=customer&action=delete&id=<?= $customer['maKH'] ?>" class="btn btn-danger">Xóa</a>
+                                                                            <a href="?page=customer&action=delete&id=<?= $customer['maKH'] ?>" class="btn btn-danger">Xóa</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>

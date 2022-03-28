@@ -10,7 +10,7 @@ $data = db_query("select * from thucan");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dat</title>
+    <title>Menu</title>
 
     <!-- <link rel="icon" href="./public/img/icon.png"> -->
     <link rel="stylesheet" href="./public/css/my-style.css">
@@ -135,7 +135,6 @@ $data = db_query("select * from thucan");
 
     <!-- My script -->
     <script src="./public/js/validate.js"></script>
-
     <!-- jQuery -->
     <script src="./public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
