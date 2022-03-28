@@ -6,6 +6,6 @@
     $sql = "CALL `xoahd`('".$_GET['id']."');";
 
         if(mysqli_query($con, $sql)){
-            header('Location: http://localhost/Restaurant-Manager/?page=order&action=index');
+            redirect("?page=order&action=index");
         };
 ?>

@@ -59,7 +59,7 @@ $data = db_query("select * from khachhang");
                                 <div class="card">
                                     <div class="card-header d-flex align-items-center">
                                         <h3 class="card-title">Tất cả khách hàng</h3>
-                                        <a href="/admin/customer/create" class="btn btn-primary ml-auto">Thêm khách hàng</a>
+                                        <a href="?page=customer&action=create" class="btn btn-primary ml-auto">Thêm khách hàng</a>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">

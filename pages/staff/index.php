@@ -60,7 +60,7 @@ $data = db_query("select * from nhanvien");
                                 <div class="card">
                                     <div class="card-header d-flex align-items-center">
                                         <h3 class="card-title">Tất cả nhân viên</h3>
-                                        <a href="/admin/staff/create" class="btn btn-primary ml-auto">Thêm nhân viên</a>
+                                        <a href="?page=staff&action=create" class="btn btn-primary ml-auto">Thêm nhân viên</a>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">

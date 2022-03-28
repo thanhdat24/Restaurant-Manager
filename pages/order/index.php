@@ -60,7 +60,7 @@ $data = db_query("SELECT h.maHD, k.tenKH, nv.tenNV, h.ngayDH
                                 <div class="card">
                                     <div class="card-header d-flex align-items-center">
                                         <h3 class="card-title">Tất cả hoá đơn</h3>
-                                        <a href="/admin/order/create" class="btn btn-primary ml-auto">Thêm hoá đơn</a>
+                                        <a href="?page=order&action=create" class="btn btn-primary ml-auto">Thêm hoá đơn</a>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">

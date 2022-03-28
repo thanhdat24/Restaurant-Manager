@@ -6,6 +6,6 @@
     $sql = "CALL `xoa_thucan`('".$_GET['id']."');";
 
         if(mysqli_query($con, $sql)){
-            header('Location: http://localhost/Restaurant-Manager/?page=menu&action=index');
+            redirect("?page=menu&action=index");
         };
 ?>
