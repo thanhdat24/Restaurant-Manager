@@ -82,7 +82,7 @@ $data = db_query("SELECT h.maHD, k.tenKH, nv.tenNV, h.ngayDH
                                                         <td><?= $order['tenNV'] ?></td>
                                                         <td><?= $order['ngayDH'] ?></td>
                                                         <td class="project-actions text-right">
-                                                            <a class="btn btn-info btn-sm mb-1" href="?page=order&action=edit&id=<?= $order['maHD'] ?>">
+                                                            <a class="btn btn-info btn-sm mb-1" href="?page=order&action=details&id=<?= $order['maHD'] ?>">
                                                                 <i class="fas fa-info-circle">
                                                                 </i>
                                                                 Chi tiết
