@@ -43,7 +43,7 @@ $data = db_query("select * from khachhang");
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="/admin/home">Trang chủ</a></li>
+                                    <li class="breadcrumb-item"><a href="?page=customer&action=index">Trang chủ</a></li>
                                     <li class="breadcrumb-item active">Quản lý khách hàng</li>
                                 </ol>
                             </div>

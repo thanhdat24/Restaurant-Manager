@@ -1,14 +1,14 @@
 <?php
-    $data = db_query("select * from thucan");
-    require 'db/connect.php';
+$data = db_query("select * from thucan");
+// require 'db/connect.php';
 
-    if(isset($_POST['btn_add'])){
+if (isset($_POST['btn_add'])) {
 
-        $insertFood = "CALL them_thucan('".$_POST["food_name"]."', '".$_POST["food_money"]."')";
-        if(mysqli_query($con, $insertFood)){
-            redirect("?page=menu&action=index");
-        }
+    $insertFood = "CALL them_thucan('" . $_POST["food_name"] . "', '" . $_POST["food_money"] . "')";
+    if (mysqli_query($con, $insertFood)) {
+        redirect("?page=menu&action=index");
     }
+}
 
 
 ?>
@@ -49,38 +49,51 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Thêm món ăn</h1>
+                                <h1>Thêm mới</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="">Quản lý thực đơn</a></li>
-                                    <li class="breadcrumb-item active">Thêm món ăn</li>
+                                    <li class="breadcrumb-item"><a href="?page=menu&action=index">Quản lý thực đơn</a></li>
+                                    <li class="breadcrumb-item active">Thêm thực đơn</li>
                                 </ol>
                             </div>
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
+                <!-- Main content -->
                 <section class="content">
-                    <div class="container-fluid">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-3">
-                                <form method="POST" name="add_form" >
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Tên món ăn</label>
-                                        <input type="text" name="food_name" class="form-control" id="food"placeholder="Nhập tên món ăn">
+                            <div class="col-md-12">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Thêm món ăn</h3>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1">nhập số tiền</label>
-                                        <input type="text" name="food_money" class="form-control" id="money" placeholder="Password">
+                                    <div class="card-body">
+
+                                        <div class="form-group">
+                                            <label for="TenLoaiHang">Tên món ăn</label>
+                                            <input type="text" name="food_name" class="form-control" id="food" placeholder="Nhập tên món ăn">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="TenLoaiHang">Đơn giá</label>
+                                            <input type="text" name="food_money" class="form-control" id="money" placeholder="Đơn giá">
+                                        </div>
+
+                                        <div class=" row">
+                                            <div class="col-12">
+                                                <a class="btn btn-secondary" href="?page=menu&action=index">
+                                                    Hủy
+                                                </a>
+                                                <button name="btn_add" type="submit" class="btn btn-success float-right">Lưu</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <button type="submit" name="btn_add" class="btn btn-primary">Submit</button>
-                                </form>
+                                    <!-- /.card-body -->
+                                </div>
                             </div>
-                            <!-- /.col -->
                         </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.container-fluid -->
+                    </form>
                 </section>
             </div>
 

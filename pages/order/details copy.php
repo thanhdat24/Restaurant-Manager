@@ -1,28 +1,20 @@
 <?php
-$data = db_query("select * from thucan");
-require 'db/connect.php';
+    $data = db_query("select * from thucan");
+    require 'db/connect.php';
 
-if (isset($_POST['btn_add'])) {
+    if(isset($_GET['id'])){
 
-    $updateCustomer = "CALL edit_kh('" . $_GET["id"] . "', '" . $_POST["nv_name"] . "', '" . $_POST["nv_address"] . "', '" . $_POST["nv_phone"] . "' )";
-    if (mysqli_query($con, $updateCustomer)) {
-        redirect("?page=customer&action=index");
+        $details = "CALL chitiet_hoadon('".$_GET["id"]."')";
+        $selected = mysqli_query($con, $details);
+
+        if(mysqli_num_rows($selected) > 0){
+            $row = mysqli_fetch_row($selected);
+        }
+
+        // echo "<pre>";
+        // print_r($row);
+        // echo "</pre>";
     }
-}
-
-if (isset($_GET['id'])) {
-
-    $update = "CALL show_kh_by_id('" . $_GET["id"] . "')";
-    $selected = mysqli_query($con, $update);
-
-    if (mysqli_num_rows($selected) > 0) {
-        $row = mysqli_fetch_row($selected);
-    }
-
-    // echo "<pre>";
-    // print_r($row);
-    // echo "</pre>";
-}
 
 ?>
 
@@ -63,58 +55,58 @@ if (isset($_GET['id'])) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Cập nhật</h1>
+                                <h1>Chi Tiết Hóa Đơn</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="?page=customer&action=index" ?>Quản lý khách hàng</a></li>
-                                    <li class="breadcrumb-item active">Chỉnh sửa khách hàng</li>
+                                    <li class="breadcrumb-item"><a href="">Quản lý hóa đơn</a></li>
+                                    <li class="breadcrumb-item active">Chi tiết hóa đơn</li>
                                 </ol>
                             </div>
                         </div>
+                    </div><!-- /.container-fluid -->
+                </section>
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-3">
+                                <form method="POST" name="add_form" >
+                                    <div class="form-group">
+                                        <label for="">Tên khách hàng</label>
+                                        <input type="text" name="food_name" class="form-control" id="food" value="<?php print_r($row[1])?>" disabled  placeholder="Nhập tên món ăn">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Địa chỉ</label>
+                                        <input type="text" name="food_money"  value="<?php print_r($row[2])?>" class="form-control" id="money" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Số điện thoại</label>
+                                        <input type="text" name="food_money"  value="<?php print_r($row[3])?>" class="form-control" id="money" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Tên món ăn</label>
+                                        <input type="text" name="food_money"  value="<?php print_r($row[4])?>" class="form-control" id="money" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Số lượng</label>
+                                        <input type="text" name="food_money"  value="<?php print_r($row[5])?>" class="form-control" id="money" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Giá bán</label>
+                                        <input type="text" name="food_money"  value="<?php print_r($row[6])?>" class="form-control" id="money" disabled>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Ngày đặt hàng</label>
+                                        <input type="text" name="food_money"  value="<?php print_r($row[7])?>" class="form-control" id="money" disabled>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                        <!-- /.row -->
                     </div>
                     <!-- /.container-fluid -->
                 </section>
-
-                <!-- Main content -->
-                <section class="content">
-                    <form method="post" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card card-primary">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Cập nhật thông tin khách hàng</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="name">Tên khách hàng</label>
-                                            <input type="text" name="nv_name" class="form-control" id="name" placeholder="Nhập tên khách hàng" value="<?php print_r($row[1]) ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="address">Địa chỉ</label>
-                                            <input type="text" name="nv_address" class="form-control" id="address" placeholder="Nhập địa chỉ" value="<?php print_r($row[2]) ?>">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="phone">Số điện thoại</label>
-                                            <input type="text" name="nv_phone" class="form-control" id="phone" placeholder="Nhập số điện thoại" value="<?php print_r($row[3]) ?>">
-                                        </div>
-                                        <div class=" row">
-                                            <div class="col-12">
-                                                <a class="btn btn-secondary" href="?page=customer&action=index">
-                                                    Hủy
-                                                </a>
-                                                <button name="btn_add" type="submit" class="btn btn-success float-right">Lưu</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /.card-body -->
-                                </div>
-                            </div>
-                        </div>
-
-                    </form>
-                </section>
-                <!-- /.content -->
             </div>
 
             <?php get_footer() ?>
@@ -167,3 +159,9 @@ if (isset($_GET['id'])) {
             }).buttons().container().appendTo('#order-table_wrapper .col-md-6:eq(0)');
         });
     </script>
+
+
+
+
+
+
