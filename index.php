@@ -17,9 +17,8 @@ require 'lib/template.php';
 
 <?php
 $act = isset($_GET['action']) ? $_GET['action'] : 'index';
-$page = isset($_GET['page']) ? $_GET['page'] : 'index';
+$page = isset($_GET['page']) ? $_GET['page'] : 'home';
 $path = "./pages/{$page}/{$act}.php";
-
 // require './inc/header.php';
 
 if (file_exists($path)) {
