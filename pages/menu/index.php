@@ -59,7 +59,7 @@ $data = db_query("select * from thucan");
                                 <div class="card">
                                     <div class="card-header d-flex align-items-center">
                                         <h3 class="card-title">Tất cả thực đơn</h3>
-                                        <a href="/admin/book/create" class="btn btn-primary ml-auto">Thêm món</a>
+                                        <a href="?page=menu&action=create" class="btn btn-primary ml-auto">Thêm món</a>
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
