@@ -15,11 +15,12 @@ if (isset($_GET['id'])) {
     $selected = mysqli_query($con, $update);
 
     if (mysqli_num_rows($selected) > 0) {
-        $row = mysqli_fetch_row($selected);
+        $row = mysqli_fetch_assoc($selected);
     }
 
+    // echo "<pre>";
     // print_r($row);
-
+    // echo "</pre>";
 }
 
 ?>
@@ -88,11 +89,11 @@ if (isset($_GET['id'])) {
 
                                         <div class="form-group">
                                             <label for="maTA">Tên món ăn</label>
-                                            <input type="text" name="food_name" class="form-control" id="food" value="<?php print_r($row[1]) ?>" placeholder="Nhập tên món ăn">
+                                            <input type="text" name="food_name" class="form-control" id="food" value="<?php print_r($row['TenTA']) ?>" placeholder="Nhập tên món ăn">
                                         </div>
                                         <div class="form-group">
                                             <label for="donGia">Đơn giá</label>
-                                            <input type="text" name="food_money" value="<?php currency_format(print_r($row[2])) ?>" class="form-control" id="money" placeholder="Đơn giá">
+                                            <input type="text" name="food_money" value="<?php currency_format(print_r($row['Dongia'])) ?>" class="form-control" id="money" placeholder="Đơn giá">
                                         </div>
 
                                         <div class=" row">
