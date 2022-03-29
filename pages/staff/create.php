@@ -9,6 +9,12 @@ if (isset($_POST['btn_add'])) {
     }
 }
 
+// $role = array("Chủ Tịch", "Giám Đốc", "Quản Lý", "Đầu Bếp", "Phục Vụ", "Thu Ngân", "Nhân Viên Kỹ Thuật");
+
+// foreach($role as $value){
+//     echo $value;
+// }
+
 
 ?>
 <!DOCTYPE html>
@@ -79,9 +85,9 @@ if (isset($_POST['btn_add'])) {
                                             <label for="gender">Giới tính</label>
                                                   <select required class="form-control custom-select" name="nv_gender" id="role">
                                                 <option disabled selected value="">Chọn giới tính</option>
-                                                <option value="Nam">Nam</option>
-                                                <option value="Nữ">Nữ</option>
-                                                <option value="Khác">Khác</option>
+                                                <option name="nv_gender" value="Nam">Nam</option>
+                                                <option name="nv_gender" value="Nữ">Nữ</option>
+                                                <option name="nv_gender" value="Khác">Khác</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -100,13 +106,13 @@ if (isset($_POST['btn_add'])) {
                                             <label for="role">Chức vụ</label>
                                             <select required class="form-control custom-select" name="nv_role" id="role">
                                                 <option disabled selected value="">Chọn chức vụ</option>
-                                                <option value="Chủ tịch">Chủ tịch</option>
-                                                <option value="Giảm đốc">Giám đốc</option>
-                                                <option value="Quản lý">Quản lý</option>
-                                                <option value="Đầu bếp">Đầu bếp</option>
-                                                <option value="Phục vụ">Phục vụ</option>
-                                                <option value="Thu ngân">Thu ngân</option>
-                                                <option value="Nhân viên kỹ thuật">Nhân viên kỹ thuật</option>
+                                                <option name="nv_role" value="Chủ tịch">Chủ tịch</option>
+                                                <option name="nv_role" value="Giảm đốc">Giám đốc</option>
+                                                <option name="nv_role" value="Quản lý">Quản lý</option>
+                                                <option name="nv_role" value="Đầu bếp">Đầu bếp</option>
+                                                <option name="nv_role" value="Phục vụ">Phục vụ</option>
+                                                <option name="nv_role" value="Thu ngân">Thu ngân</option>
+                                                <option name="nv_role" value="Nhân viên kỹ thuật">Nhân viên kỹ thuật</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
