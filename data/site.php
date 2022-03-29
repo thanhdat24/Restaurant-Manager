@@ -50,6 +50,12 @@ $SITE = array(
             'icon'  => 'fas fa-money-bill-alt',
             'link'  => '?page=statistic&action=salary',
           ],
+          [
+            'title' => 'Thâm niên làm việc',
+            'name'  => 'seniority',
+            'icon'  => 'fas fa-address-card',
+            'link'  => '?page=statistic&action=seniority',
+          ],
         ],
       ],
     ],

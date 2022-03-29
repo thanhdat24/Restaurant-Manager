@@ -1,6 +1,17 @@
 <?php
 $data = db_query("select * from nhanvien");
 
+if (isset($_POST['btn_add'])) {
+    $statisticSeniority =
+        "SELECT thoigian_dalam('" . $_POST["maNV"] . "')";
+
+    $result = mysqli_query($con, $statisticSeniority);
+    if ($result) {
+        $_SESSION['statisticSeniority'] = mysqli_fetch_array($result);
+        redirect("?page=statistic&action=seniority");
+    }
+    $_SESSION['staff'] =  db_fetch_row("SELECT *FROM nhanvien WHERE maNV='" . $_POST["maNV"] . "'");
+}
 ?>
 
 <!DOCTYPE html>
@@ -139,6 +150,30 @@ $data = db_query("select * from nhanvien");
                         <!-- /.row -->
                     </div>
                     <!-- /.container-fluid -->
+                </section>
+                <section class="content">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Thống kê thâm niên làm việc của nhân viên</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="maNV">Mã nhân viên</label>
+                                            <input type="text" name="maNV" class="form-control" id="maNV" placeholder="Nhập mã nhân viên">
+                                        </div>
+                                        <div class=" row">
+                                            <div class="col-12">
+                                                <button name="btn_add" type="submit" class="btn btn-success float-right">Thống kê</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </section>
             </div>
             <?php get_footer() ?>
