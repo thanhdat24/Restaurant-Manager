@@ -1,8 +1,6 @@
 <?php
 $data = db_query("select * from thucan");
 
-
-
 if (isset($_POST['btn_add'])) {
 
     $statisticFood = "CALL thongkebanhang('" . $_POST["maTA"] . "')";
@@ -10,10 +8,8 @@ if (isset($_POST['btn_add'])) {
     if ($result) {
         redirect("?page=statistic&action=menu");
     }
-    if (mysqli_num_rows($result) > 0) {
+
         $_SESSION['statisticFood'] = mysqli_fetch_assoc($result);
-    }
-	
 }
 ?>
 <!DOCTYPE html>

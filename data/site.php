@@ -39,7 +39,7 @@ $SITE = array(
             'link'  => '?page=statistic&action=index',
           ],
           [
-            'title' => 'Thống kê bán hàng',
+            'title' => 'Thống kê món ắn',
             'name'  => 'menu',
             'icon'  => 'fas fa-pizza-slice',
             'link'  => '?page=statistic&action=menu',
