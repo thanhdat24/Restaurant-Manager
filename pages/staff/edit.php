@@ -16,9 +16,9 @@ if (isset($_GET['id'])) {
   $selected = mysqli_query($con, $update);
 
   if (mysqli_num_rows($selected) > 0) {
-    $row = mysqli_fetch_row($selected);
+    $row = mysqli_fetch_assoc($selected);
   }
-  $role = print_r($row[6]);
+  // //$role = print_r($row[6]);
   // echo "<pre>";
   // print_r($row);
   // echo "</pre>";
@@ -89,35 +89,35 @@ if (isset($_GET['id'])) {
 
                     <div class="form-group">
                       <label for="MSNV">Mã nhân viên</label>
-                      <input disabled type="text" name="MSNV" id="MSNV" class="form-control" value="<?php print_r($row[0]) ?>">
+                      <input disabled type="text" name="MSNV" id="MSNV" class="form-control" value="<?php print_r($row['maNV']) ?>">
                     </div>
                     <div class="form-group">
                       <label for="name">Tên nhân viên</label>
-                      <input type="text" name="nv_name" class="form-control" id="name" placeholder="Nhập tên nhân viên" value="<?php print_r($row[1]) ?>">
+                      <input type="text" name="nv_name" class="form-control" id="name" placeholder="Nhập tên nhân viên" value="<?php print_r($row['tenNV']) ?>">
                     </div>
                     <div class="form-group">
                       <label for="gender">Giới tính</label>
-                      <input type="text" name="nv_gender" class="form-control" id="gender" placeholder="Nhập giới tính" value="<?php print_r($row[2]) ?>">
+                      <input type="text" name="nv_gender" class="form-control" id="gender" placeholder="Nhập giới tính" value="<?php print_r($row['gioiTinh']) ?>">
                     </div>
                     <div class="form-group">
                       <label for="birth">Ngày sinh</label>
-                      <input type="date" name="nv_birth" class="form-control" id="birth" placeholder="Nhập ngày sinh YYYY-MM-DD" value="<?php print_r($row[3]) ?>">
+                      <input type="date" name="nv_birth" class="form-control" id="birth" placeholder="Nhập ngày sinh YYYY-MM-DD" value="<?php print_r($row['ngaySinh']) ?>">
                     </div>
                     <div class="form-group">
                       <label for="work">Ngày làm việc</label>
-                      <input type="date" name="nv_work" class="form-control" id="work" placeholder="Nhập ngày làm việc YYYY-MM-DD" value="<?php print_r($row[4]) ?>">
+                      <input type="date" name="nv_work" class="form-control" id="work" placeholder="Nhập ngày làm việc YYYY-MM-DD" value="<?php print_r($row['ngayLamviec']) ?>">
 
                     </div>
                     <div class="form-group">
                       <label for="address">Địa chỉ</label>
-                      <input type="text" name="nv_address" class="form-control" id="address" placeholder="Nhập ngày địa chỉ" value="<?php print_r($row[5]) ?>">
+                      <input type="text" name="nv_address" class="form-control" id="address" placeholder="Nhập ngày địa chỉ" value="<?php print_r($row['Diachi']) ?>">
                     </div>
                     <div class="form-group">
                       <label for="role">Chức vụ</label>
                       <select required class="form-control custom-select" name="nv_role" id="role">
-                        <option name="nv_role" value="<?php print_r($row[6]) ?>"><?php print_r($row[6]) ?></option>
+                        <option name="nv_role" value="<?php print_r($row['Chucvu']) ?>"><?php print_r($row['Chucvu']) ?></option>
                         <option name="nv_role" value="Chủ tịch">Chủ tịch</option>
-                        <option name="nv_role" value="Giảm đốc">Giám đốc</option>
+                        <option name="nv_role" value="Giám đốc">Giám đốc</option>
                         <option name="nv_role" value="Quản lý">Quản lý</option>
                         <option name="nv_role" value="Đầu bếp">Đầu bếp</option>
                         <option name="nv_role" value="Phục vụ">Phục vụ</option>
@@ -127,11 +127,11 @@ if (isset($_GET['id'])) {
                     </div>
                     <div class="form-group">
                       <label for="phone">Số điện thoại</label>
-                      <input type="text" name="nv_phone" class="form-control" id="phone" placeholder="Nhập số điện thoại" value="<?php print_r($row[7]) ?>">
+                      <input type="text" name="nv_phone" class="form-control" id="phone" placeholder="Nhập số điện thoại" value="<?php print_r($row['sdt']) ?>">
                     </div>
                     <div class="form-group">
                       <label for="pay">Lương</label>
-                      <input type="text" name="nv_pay" class="form-control" id="pay" placeholder="Nhập số lương" value="<?php print_r($row[8]) ?>">
+                      <input type="text" name="nv_pay" class="form-control" id="pay" placeholder="Nhập số lương" value="<?php print_r($row['luong']) ?>">
                     </div>
                     <div class=" row">
                       <div class="col-12">

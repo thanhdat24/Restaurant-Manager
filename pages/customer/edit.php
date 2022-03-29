@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
     $selected = mysqli_query($con, $update);
 
     if (mysqli_num_rows($selected) > 0) {
-        $row = mysqli_fetch_row($selected);
+        $row = mysqli_fetch_assoc($selected);
     }
 
     // echo "<pre>";
@@ -55,6 +55,7 @@ if (isset($_GET['id'])) {
 <body class="hold-transition sidebar-mini layout-fixed">
     <header>
         <div class="wrapper">
+
             <?php get_sidebar() ?>
             <?php get_header() ?>
             <div class="content-wrapper">
@@ -88,15 +89,15 @@ if (isset($_GET['id'])) {
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="name">Tên khách hàng</label>
-                                            <input type="text" name="nv_name" class="form-control" id="name" placeholder="Nhập tên khách hàng" value="<?php print_r($row[1]) ?>">
+                                            <input type="text" name="nv_name" class="form-control" id="name" placeholder="Nhập tên khách hàng" value="<?php print_r($row['tenKH']) ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="address">Địa chỉ</label>
-                                            <input type="text" name="nv_address" class="form-control" id="address" placeholder="Nhập địa chỉ" value="<?php print_r($row[2]) ?>">
+                                            <input type="text" name="nv_address" class="form-control" id="address" placeholder="Nhập địa chỉ" value="<?php print_r($row['diaChi']) ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="phone">Số điện thoại</label>
-                                            <input type="text" name="nv_phone" class="form-control" id="phone" placeholder="Nhập số điện thoại" value="<?php print_r($row[3]) ?>">
+                                            <input type="text" name="nv_phone" class="form-control" id="phone" placeholder="Nhập số điện thoại" value="<?php print_r($row['sdt']) ?>">
                                         </div>
                                         <div class=" row">
                                             <div class="col-12">
