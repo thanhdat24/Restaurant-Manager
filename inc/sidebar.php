@@ -1,6 +1,7 @@
 <?php
 require 'data/site.php';
 $page = $_GET['page'];
+$action = $_GET['action'];
 ?>
 
 <!-- Main Sidebar Container -->
@@ -44,23 +45,24 @@ $page = $_GET['page'];
                 <?php foreach ($SITE['navigation']['admin'] as $key => $item) :  ?>
 
                     <?php
-                    $activeClass = "";
+                    $activeClassItem = "";
+
                     $openMenuClass = "";
                     if ($page  === $item['name']) {
-                        $activeClass = "active ";
+                        $activeClassItem = "active ";
                     }
-                    // if (isset($item['subitems'])) {
-                    //     foreach ($item['subitems'] as $key => $subitem) {
-                    //         if ($page === $subitem['name']) {
-                    //             $openMenuClass = "menu-is-opening menu-open ";
-                    //         }
-                    //     }
-                    // } 
+                    if (isset($item['subitems'])) {
+                        foreach ($item['subitems'] as $key => $subitem) {
+                            if ($action === $subitem['name'] && $page === 'statistic') {
+                                $openMenuClass = "menu-is-opening menu-open ";
+                            }
+                        }
+                    }
                     ?>
 
                     <li id="nav-<?= $key ?>" class="nav-item <?= $openMenuClass ?>">
 
-                        <a href=<?= $item['link'] ?> class="nav-link <?= $activeClass ?>">
+                        <a href=<?= $item['link'] ?> class="nav-link <?= $activeClassItem ?>">
                             <i class="nav-icon <?= $item['icon'] ?>"></i>
                             <p>
                                 <?= $item['title'] ?>
@@ -69,6 +71,26 @@ $page = $_GET['page'];
                                 <?php endif; ?>
                             </p>
                         </a>
+                        <?php if (isset($item['subitems'])) :
+
+                        ?>
+                            <?php foreach ($item['subitems'] as $key => $subitem) :
+                                $activeClassSubItem = "";
+                                if ($action  === $subitem['name'] && $page = 'statistic') {
+                                    $activeClassSubItem = "active ";
+                                };
+                            ?>
+
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href=<?= $subitem['link'] ?> class="nav-link <?= $activeClassSubItem ?>">
+                                            <i class="<?= $subitem['icon'] ?> nav-icon ml-3"></i>
+                                            <p><?= $subitem['title'] ?></p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            <?php endforeach; ?>
+                        <?php endif ?>
                     </li>
                 <?php endforeach; ?>
             </ul>

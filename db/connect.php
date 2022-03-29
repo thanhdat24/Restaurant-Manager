@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "csdl");
+$con = mysqli_connect("localhost", "root", "", "qlqa");
 
 // Check connection
 if ($con->connect_errno) {

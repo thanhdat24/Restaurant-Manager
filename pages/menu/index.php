@@ -1,6 +1,20 @@
 <?php
 $data = db_query("select * from thucan");
 
+
+
+if (isset($_POST['btn_add'])) {
+
+    $statisticFood = "CALL thongkebanhang('" . $_POST["maTA"] . "')";
+    $result = mysqli_query($con, $statisticFood);
+    if ($result) {
+        redirect("?page=statistic&action=menu");
+    }
+    if (mysqli_num_rows($result) > 0) {
+        $_SESSION['statisticFood'] = mysqli_fetch_assoc($result);
+    }
+	
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -126,6 +140,30 @@ $data = db_query("select * from thucan");
                         <!-- /.row -->
                     </div>
                     <!-- /.container-fluid -->
+                </section>
+                <section class="content">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Thống kê số lượng món ăn đã bán</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="maTA">Mã món ăn</label>
+                                            <input type="text" name="maTA" class="form-control" id="maTA" placeholder="Nhập mã món ăn">
+                                        </div>
+                                        <div class=" row">
+                                            <div class="col-12">
+                                                <button name="btn_add" type="submit" class="btn btn-success float-right">Thống kê</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </section>
             </div>
             <?php get_footer() ?>
