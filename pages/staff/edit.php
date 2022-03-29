@@ -115,14 +115,13 @@ if (isset($_GET['id'])) {
                     <div class="form-group">
                       <label for="role">Chức vụ</label>
                       <select required class="form-control custom-select" name="nv_role" id="role">
-                        <option name="nv_role" value="<?php print_r($row['Chucvu']) ?>"><?php print_r($row['Chucvu']) ?></option>
-                        <option name="nv_role" value="Chủ tịch">Chủ tịch</option>
-                        <option name="nv_role" value="Giám đốc">Giám đốc</option>
-                        <option name="nv_role" value="Quản lý">Quản lý</option>
-                        <option name="nv_role" value="Đầu bếp">Đầu bếp</option>
-                        <option name="nv_role" value="Phục vụ">Phục vụ</option>
-                        <option name="nv_role" value="Thu ngân">Thu ngân</option>
-                        <option name="nv_role" value="Nhân viên kỹ thuật">Nhân viên kỹ thuật</option>
+                        <option <?= $row['Chucvu'] == "Chủ tịch" ? "selected" : "" ?> value="Chủ tịch">Chủ tịch</option>
+                        <option <?= $row['Chucvu'] == "Giám đốc" ? "selected" : "" ?> value="Giám đốc">Giám đốc</option>
+                        <option <?= $row['Chucvu'] == "Quản lý" ? "selected" : "" ?> value="Quản lý">Quản lý</option>
+                        <option <?= $row['Chucvu'] == "Đầu bếp" ? "selected" : "" ?> value="Đầu bếp">Đầu bếp</option>
+                        <option <?= $row['Chucvu'] == "Phục vụ" ? "selected" : "" ?> value="Phục vụ">Phục vụ</option>
+                        <option <?= $row['Chucvu'] == "Thu ngân" ? "selected" : "" ?> value="Thu ngân">Thu ngân</option>
+                        <option <?= $row['Chucvu'] == "Nhân viên kỹ thuật" ? "selected" : "" ?> value="Nhân viên kỹ thuật">Nhân viên kỹ thuật</option>
                       </select>
                     </div>
                     <div class="form-group">
