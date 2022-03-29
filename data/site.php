@@ -30,19 +30,25 @@ $SITE = array(
         'title' => 'Thống kê',
         'name'  => 'statistic',
         'icon'  => 'fas fa-chart-bar',
-        'link'  => '?page=statistic&action=index',
+        'link'  => '?page=statistic&action=order',
         'subitems' => [
           [
             'title' => 'Món ăn bán chạy',
-            'name'  => 'index',
+            'name'  => 'order',
             'icon'  => 'fas fa-hamburger',
-            'link'  => '?page=statistic&action=index',
+            'link'  => '?page=statistic&action=order',
           ],
           [
             'title' => 'Thống kê món ắn',
             'name'  => 'menu',
             'icon'  => 'fas fa-pizza-slice',
             'link'  => '?page=statistic&action=menu',
+          ],
+          [
+            'title' => 'Lương nhân viên',
+            'name'  => 'salary',
+            'icon'  => 'fas fa-money-bill-alt',
+            'link'  => '?page=statistic&action=salary',
           ],
         ],
       ],

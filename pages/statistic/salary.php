@@ -1,13 +1,11 @@
 <?php
 require 'db/connect.php';
-$bestSellingFood = "CALL thucanbanchay()";
-$result = mysqli_query($con, $bestSellingFood);
+$maxSalary = "CALL luongcaonhat()";
+$result = mysqli_query($con, $maxSalary);
 
-$data = array();
+
 if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $data[] = $row;
-    }
+    $data = mysqli_fetch_assoc($result);
 }
 ?>
 
@@ -48,12 +46,12 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Thống kê món ăn bán chạy</h1>
+                                <h1>Thống kê lương cao nhất</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="?page=statistic&action=index">Trang chủ</a></li>
-                                    <li class="breadcrumb-item active">Món ăn bán chạy</li>
+                                    <li class="breadcrumb-item"><a href="?page=statistic&action=order">Trang chủ</a></li>
+                                    <li class="breadcrumb-item active">Lương nhân viên</li>
                                 </ol>
                             </div>
                         </div>
@@ -70,19 +68,19 @@ if (mysqli_num_rows($result) > 0) {
                                         <table id="main-table" class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Mã thức ăn</th>
-                                                    <th>Tên thức ăn</th>
-                                                    <th>Tổng số lượng đã bán</th>
+                                                    <th>Mã nhân viên</th>
+                                                    <th>Tên nhân viên</th>
+                                                    <th>Lương</th>
+                                                    <th>Chức vụ</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach ($data as $key => $food) { ?>
-                                                    <tr>
-                                                        <td><?= $food['maTA'] ?></td>
-                                                        <td><?= $food['TenTA'] ?></td>
-                                                        <td><?= $food['tongsl'] ?></td>
-                                                    </tr>
-                                                <?php } ?>
+                                                <tr>
+                                                    <td><?= $data['maNV'] ?></td>
+                                                    <td><?= $data['tenNV'] ?></td>
+                                                    <td><?= currency_format($data['luong'])  ?></td>
+                                                    <td><?= $data['Chucvu'] ?></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

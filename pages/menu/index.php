@@ -6,10 +6,9 @@ if (isset($_POST['btn_add'])) {
     $statisticFood = "CALL thongkebanhang('" . $_POST["maTA"] . "')";
     $result = mysqli_query($con, $statisticFood);
     if ($result) {
+        $_SESSION['statisticFood'] = mysqli_fetch_assoc($result);
         redirect("?page=statistic&action=menu");
     }
-
-        $_SESSION['statisticFood'] = mysqli_fetch_assoc($result);
 }
 ?>
 <!DOCTYPE html>

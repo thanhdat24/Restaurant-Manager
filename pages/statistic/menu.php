@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
-                                        <li class="breadcrumb-item"><a href="?page=statistic&action=index">Trang chủ</a></li>
+                                        <li class="breadcrumb-item"><a href="?page=statistic&action=order">Trang chủ</a></li>
                                         <li class="breadcrumb-item active">Thống kê món ăn</li>
                                     </ol>
                                 </div>
@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
-                                        <li class="breadcrumb-item"><a href="?page=statistic&action=index">Trang chủ</a></li>
+                                        <li class="breadcrumb-item"><a href="?page=statistic&action=order">Trang chủ</a></li>
                                         <li class="breadcrumb-item active">Thống kê món ăn</li>
                                     </ol>
                                 </div>
