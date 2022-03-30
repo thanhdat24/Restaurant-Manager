@@ -21,7 +21,7 @@ if (isset($_POST['btn_add'])) {
 
     <title>Menu</title>
 
-    <!-- <link rel="icon" href="./public/img/icon.png"> -->
+    <link rel="icon" href="./public/img/icon.svg">
     <link rel="stylesheet" href="./public/css/my-style.css">
     <link rel="stylesheet" href="./public/css/adminpage.css">
 

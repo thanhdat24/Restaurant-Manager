@@ -21,7 +21,7 @@ if (mysqli_num_rows($result) > 0) {
 
     <title>Dat</title>
 
-    <!-- <link rel="icon" href="./public/img/icon.png"> -->
+    <link rel="icon" href="./public/img/icon.svg">
     <link rel="stylesheet" href="./public/css/my-style.css">
     <link rel="stylesheet" href="./public/css/adminpage.css">
 

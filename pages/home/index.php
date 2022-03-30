@@ -13,7 +13,7 @@
 
     <title>Restaurant-Manager </title>
 
-    <!-- <link rel="icon" href="./public/img/icon.png"> -->
+    <link rel="icon" href="./public/img/icon.svg">
     <link rel="stylesheet" href="./public/css/my-style.css">
     <link rel="stylesheet" href="./public/css/adminpage.css">
 
@@ -35,7 +35,7 @@
             <?php get_sidebar() ?>
             <?php get_header() ?>
             <div class="content-wrapper">
-                home
+                Đây là trang home
             </div>
             <?php get_footer() ?>
 
@@ -64,7 +64,7 @@
     <script src="./public/plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="./public/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
     <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
-    
+
     <!-- AdminLTE App -->
     <script src="./public/js/adminlte.min.js"></script>
 

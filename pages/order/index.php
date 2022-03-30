@@ -13,7 +13,7 @@ $data = db_query("SELECT h.maHD, k.tenKH, nv.tenNV, h.ngayDH
 
     <title>Quản Lý Quán Ăn</title>
 
-    <!-- <link rel="icon" href="./public/img/icon.png"> -->
+    <link rel="icon" href="./public/img/icon.svg">
     <link rel="stylesheet" href="./public/css/my-style.css">
     <link rel="stylesheet" href="./public/css/adminpage.css">
 
