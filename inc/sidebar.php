@@ -1,15 +1,15 @@
 <?php
 require 'data/site.php';
-$page = $_GET['page'];
-$action = $_GET['action'];
+$action = isset($_GET['action']) ? $_GET['action'] : 'index';
+$page = isset($_GET['page']) ? $_GET['page'] : 'home';
 ?>
 
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" style="color:#ffffffcc" class="brand-link">
-        <span class="iconify" data-icon="emojione-monotone:shallow-pan-of-food" data-width="35" data-height="49" style="margin-left:12px"></span>
-        <!-- <img src="" alt=" Admin Logo" class="brand-image  elevation-3" style="opacity: .8"> -->
+        <!-- <span class="iconify" data-icon="emojione-monotone:shallow-pan-of-food" data-width="35" data-height="49" style="margin-left:12px"></span> -->
+        <img src="./public/img/icon.svg" alt=" Admin Logo" class="brand-image  elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">Quản Lý Quán Ăn</span>
     </a>
 
