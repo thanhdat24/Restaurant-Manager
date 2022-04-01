@@ -18,10 +18,6 @@ if (isset($_GET['id'])) {
     if (mysqli_num_rows($selected) > 0) {
         $row = mysqli_fetch_assoc($selected);
     }
-
-    // echo "<pre>";
-    // print_r($row);
-    // echo "</pre>";
 }
 
 ?>

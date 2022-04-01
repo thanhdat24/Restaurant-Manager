@@ -1,7 +1,7 @@
 <?php
 $data = db_query("SELECT h.maHD, k.tenKH, nv.tenNV, h.ngayDH 
     FROM nhanvien nv INNER JOIN hoadon h ON nv.maNV=h.maNV INNER JOIN khachhang k ON k.maKH = h.maKH");
-
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

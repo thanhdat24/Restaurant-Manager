@@ -140,3 +140,8 @@ function show_array($arr)
     }
     return false;
 }
+
+function getAllNumber($table)
+{
+    return  db_num_rows("SELECT * FROM $table");
+}
