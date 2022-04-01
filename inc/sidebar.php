@@ -1,5 +1,5 @@
 <?php
-require 'data/site.php';
+require 'configs/site.php';
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 ?>
