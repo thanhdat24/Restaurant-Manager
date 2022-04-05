@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     $selected = mysqli_query($con, $details);
 
     if (mysqli_num_rows($selected) > 0) {
-        $row = mysqli_fetch_row($selected);
+        $row = mysqli_fetch_assoc($selected);
     }
 
     // echo "<pre>";
@@ -48,35 +48,35 @@ if (isset($_GET['id'])) {
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="MSNV">Mã hoá dơn</label>
-                                            <input readonly type="text" id="maHD" name="maHD" class="form-control" value="<?php print_r($row[0]) ?>"></input>
+                                            <input readonly type="text" id="maHD" name="maHD" class="form-control" value="<?php print_r($row['maHD']) ?>"></input>
                                         </div>
                                         <div class="form-group">
                                             <label for="">Tên khách hàng</label>
-                                            <input type="text" name="food_name" class="form-control" id="food" value="<?php print_r($row[1]) ?>" disabled placeholder="Nhập tên món ăn">
+                                            <input type="text" name="food_name" class="form-control" id="food" value="<?php print_r($row['tenKH']) ?>" disabled placeholder="Nhập tên món ăn">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Địa chỉ</label>
-                                            <input type="text" name="food_money" value="<?php print_r($row[2]) ?>" class="form-control" id="money" disabled>
+                                            <input type="text" name="food_money" value="<?php print_r($row['diaChi']) ?>" class="form-control" id="money" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Số điện thoại</label>
-                                            <input type="text" name="food_money" value="<?php print_r($row[3]) ?>" class="form-control" id="money" disabled>
+                                            <input type="text" name="food_money" value="<?php print_r($row['sdt']) ?>" class="form-control" id="money" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Tên món ăn</label>
-                                            <input type="text" name="food_money" value="<?php print_r($row[4]) ?>" class="form-control" id="money" disabled>
+                                            <input type="text" name="food_money" value="<?php print_r($row['TenTA']) ?>" class="form-control" id="money" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Số lượng</label>
-                                            <input type="text" name="food_money" value="<?php print_r($row[5]) ?>" class="form-control" id="money" disabled>
+                                            <input type="text" name="food_money" value="<?php print_r($row['soluong']) ?>" class="form-control" id="money" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Giá bán</label>
-                                            <input type="text" name="food_money" value="<?php print_r($row[6]) ?>" class="form-control" id="money" disabled>
+                                            <input type="text" name="food_money" value="<?php print_r($row['tonggia']) ?>" class="form-control" id="money" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Ngày đặt hàng</label>
-                                            <input type="text" name="food_money" value="<?php print_r($row[7]) ?>" class="form-control" id="money" disabled>
+                                            <input type="text" name="food_money" value="<?php print_r($row['ngayDH']) ?>" class="form-control" id="money" disabled>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
