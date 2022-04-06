@@ -49,7 +49,7 @@ $data = db_query("select * from khachhang");
                                                         <td><?= $customer['maKH'] ?></td>
                                                         <td><?= $customer['tenKH'] ?></td>
                                                         <td><?= $customer['diaChi'] ?></td>
-                                                        <td><?= $customer['sdt'] ?></td>
+                                                        <td>0<?= $customer['sdt'] ?></td>
                                                         <td class="project-actions text-right">
                                                             <a class="btn btn-info btn-sm mb-1" href="?page=customer&action=edit&id=<?= $customer['maKH'] ?>">
                                                                 <i class="fas fa-edit">

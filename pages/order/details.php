@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="?page=order&action=index" ?>Quản lý hoá đơn</a></li>
-                                    <li class="breadcrumb-item active">Chi tiết hoá d</li>
+                                    <li class="breadcrumb-item active">Chi tiết hoá đơn</li>
                                 </ol>
                             </div>
                         </div>

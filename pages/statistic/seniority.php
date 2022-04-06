@@ -53,7 +53,7 @@
                                               <td><?= $_SESSION['staff']['Diachi'] ?></td>
                                               <td><?= $_SESSION['staff']['Chucvu'] ?></td>
 
-                                              <td><?= $_SESSION['staff']['sdt'] ?></td>
+                                              <td>0<?= $_SESSION['staff']['sdt'] ?></td>
                                               <td><?= currency_format($_SESSION['staff']['luong'])  ?></td>
                                           </tr>
                                       </tbody>

@@ -71,7 +71,7 @@ if (isset($_POST['btn_add'])) {
                                                         <td><?= $staff['Diachi'] ?></td>
                                                         <td><?= $staff['Chucvu'] ?></td>
 
-                                                        <td><?= $staff['sdt'] ?></td>
+                                                        <td>0<?= $staff['sdt'] ?></td>
                                                         <td><?= currency_format($staff['luong'])  ?></td>
                                                         <td class="project-actions text-right">
                                                             <a class="btn btn-info btn-sm mb-1" href="?page=staff&action=edit&id=<?= $staff['maNV'] ?>">

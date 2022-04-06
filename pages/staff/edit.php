@@ -70,7 +70,7 @@ if (isset($_GET['id'])) {
                     </div>
                     <div class="form-group">
                       <label for="birth">Ngày sinh</label>
-                      <input type="date" name="nv_birth" class="form-control" id="birth" placeholder="Nhập ngày sinh YYYY-MM-DD" value="<?php print_r($row['ngaySinh']) ?>">
+                      <input type="date" name="nv_birth" class="form-control" id="birth" placeholder="Nhập ngày sinh YYYY-MM-DD" value="<?php print_r($row['Ngaysinh']) ?>">
                     </div>
                     <div class="form-group">
                       <label for="work">Ngày làm việc</label>
