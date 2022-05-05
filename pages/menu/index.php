@@ -3,10 +3,9 @@ $data = db_query("select * from thucan");
 
 if (isset($_POST['btn_add'])) {
 
-    $statisticFood = "CALL thongkebanhang('" . $_POST["maTA"] . "')";
-    $result = mysqli_query($con, $statisticFood);
-    if ($result) {
-        $_SESSION['statisticFood'] = mysqli_fetch_assoc($result);
+    $statisticFood = db_query("CALL thongkebanhang('" . $_POST["maTA"] . "')");
+    if ($statisticFood) {
+        $_SESSION['statisticFood'] = mysqli_fetch_assoc($$statisticFood);
         redirect("?page=statistic&action=menu");
     }
 }

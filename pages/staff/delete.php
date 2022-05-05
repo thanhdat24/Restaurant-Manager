@@ -1,11 +1,10 @@
 <?php
-    require 'db/connect.php';
+require 'db/connect.php';
 
-    $id = $_GET['id'];
+$id = $_GET['id'];
 
-    $sql = "CALL `xoa_nv`('".$_GET['id']."');";
+$sql = db_query("CALL `xoa_nv`('" . $_GET['id'] . "')");
 
-        if(mysqli_query($con, $sql)){
-            redirect("?page=staff&action=index");
-        };
-?>
+if ($sql) {
+    redirect("?page=staff&action=index");
+};

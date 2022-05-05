@@ -3,8 +3,8 @@ $data = db_query("select * from thucan");
 require 'db/connect.php';
 
 if (isset($_POST['btn_add'])) {
-    $insertStaff = "CALL them_nv('" . $_POST["nv_name"] . "', '" . $_POST["nv_gender"] . "',  '" . $_POST["nv_phone"] . "', '" . $_POST["nv_address"] . "', '" . $_POST["nv_birth"] . "', '" . $_POST["nv_work"] . "', '" . $_POST["nv_role"] . "', '" . $_POST["nv_pay"] . "' )";
-    if (mysqli_query($con, $insertStaff)) {
+    $insertStaff = db_query("CALL them_nv('" . $_POST["nv_name"] . "', '" . $_POST["nv_gender"] . "',  '" . $_POST["nv_phone"] . "', '" . $_POST["nv_address"] . "', '" . $_POST["nv_birth"] . "', '" . $_POST["nv_work"] . "', '" . $_POST["nv_role"] . "', '" . $_POST["nv_pay"] . "' )");
+    if ($insertStaff) {
         redirect("?page=staff&action=index");
     }
 }

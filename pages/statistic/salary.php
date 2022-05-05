@@ -11,12 +11,7 @@ if (mysqli_num_rows($resultMaxSalary) > 0) {
 
 <?php
 require 'db/connect.php';
-$minSalary = "CALL luongthapnhat()";
-$resultMinSalary = mysqli_query($con, $minSalary);
-
-if (mysqli_num_rows($resultMinSalary) > 0) {
-    $dataMin = mysqli_fetch_assoc($resultMinSalary);
-}
+$dataMin = db_fetch_array("CALL luongthapnhat()");
 
 ?>
             <?php get_header() ?>

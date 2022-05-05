@@ -1,11 +1,10 @@
 <?php
-    require 'db/connect.php';
+require 'db/connect.php';
 
-    $id = $_GET['id'];
+$id = $_GET['id'];
 
-    $sql = "CALL `xoa_khachhang`('".$_GET['id']."');";
 
-        if(mysqli_query($con, $sql)){
-            redirect("?page=customer&action=index");
-        };
-?>
+$sql = db_query("CALL `xoa_khachhang`('" . $_GET['id'] . "');");
+if ($sql) {
+    redirect("?page=customer&action=index");
+};

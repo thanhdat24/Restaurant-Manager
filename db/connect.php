@@ -1,5 +1,11 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "quanlyquanan");
+$severname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "quanlyquanan";
+
+
+$con = mysqli_connect($severname, $username, $password, $dbname);
 $con->set_charset('utf8mb4');
 
 // Check connection

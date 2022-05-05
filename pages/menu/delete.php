@@ -3,9 +3,8 @@
 
     $id = $_GET['id'];
 
-    $sql = "CALL `xoa_thucan`('".$_GET['id']."');";
+    $sql = db_query("CALL `xoa_thucan`('" . $_GET['id'] . "');");
 
-        if(mysqli_query($con, $sql)){
+        if($sql){
             redirect("?page=menu&action=index");
         };
-?>

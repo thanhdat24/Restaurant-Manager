@@ -33,14 +33,13 @@ function db_fetch_row($query_string)
     return $result;
 }
 
-//Lấy một mảng trong database
+
 function db_fetch_array($query_string)
 {
-    global $conn;
-    $result = array();
+    global $con;
     $mysqli_result = db_query($query_string);
     while ($row = mysqli_fetch_assoc($mysqli_result)) {
-        $result[] = $row;
+        $result = $row;
     }
     mysqli_free_result($mysqli_result);
     return $result;
@@ -52,59 +51,6 @@ function db_num_rows($query_string)
     global $conn;
     $result = db_query($query_string);
     return mysqli_num_rows($result);
-}
-
-function db_insert($table, $data)
-{
-    global $conn;
-    $fields = "(" . implode(", ", array_keys($data)) . ")";
-    $values = "";
-    foreach ($data as $field => $value) {
-        if ($value === NULL)
-            $values .= "NULL, ";
-        else
-            $values .= "'" . escape_string($value) . "', ";
-    }
-    $values = substr($values, 0, -2);
-    db_query("
-            INSERT INTO $table $fields
-            VALUES($values)
-        ");
-    return mysqli_insert_id($conn);
-}
-
-function db_update($table, $data, $where)
-{
-    global $conn;
-    $sql = "";
-    foreach ($data as $field => $value) {
-        if ($value === NULL)
-            $sql .= "$field=NULL, ";
-        else
-            $sql .= "$field='" . escape_string($value) . "', ";
-    }
-    $sql = substr($sql, 0, -2);
-    db_query("
-            UPDATE $table
-            SET $sql
-            WHERE $where
-   ");
-    return mysqli_affected_rows($conn);
-}
-
-function db_delete($table, $where)
-{
-    global $conn;
-    $query_string = "DELETE FROM " . $table . " WHERE $where";
-    db_query($query_string);
-    return mysqli_affected_rows($conn);
-}
-
-// Chống SQL Injection
-function escape_string($str)
-{
-    global $conn;
-    return mysqli_real_escape_string($conn, $str);
 }
 
 // Hiển thị lỗi SQL
