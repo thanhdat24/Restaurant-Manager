@@ -7,3 +7,4 @@
 - PHP
 - Bootstrap
 - MYSQL
+- JQuery
