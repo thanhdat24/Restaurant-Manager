@@ -22,6 +22,13 @@
     <link rel="stylesheet" href="./public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="./public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="./public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
+    <!-- SWEETALERT2 CSS -->
+    <link rel="stylesheet" href="./public/css/sweetalert2.min.css">
+
+    <!-- CSS STYLE  -->
+    <link rel="stylesheet" href="./public/css/my-style.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

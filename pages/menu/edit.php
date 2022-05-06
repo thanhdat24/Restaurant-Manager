@@ -10,17 +10,7 @@ if (isset($_POST['btn_add'])) {
 }
 
 if (isset($_GET['id'])) {
-
-    $update = "CALL show_thucan_id('" . $_GET["id"] . "')";
-    $selected = mysqli_query($con, $update);
-
-    if (mysqli_num_rows($selected) > 0) {
-        $row = mysqli_fetch_assoc($selected);
-    }
-
-    // echo "<pre>";
-    // print_r($row);
-    // echo "</pre>";
+    $row = db_fetch_array("CALL show_thucan_id('" . $_GET["id"] . "')");
 }
 
 ?>

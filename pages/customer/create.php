@@ -3,11 +3,11 @@ $data = db_query("select * from thucan");
 require 'db/connect.php';
 
 if (isset($_POST['btn_add'])) {
-    $insertCustomer =  db_query("CALL them_kh('" . $_POST["nv_name"] . "', '" . $_POST["nv_address"] . "', '" . $_POST["nv_phone"] . "' )");
-
-    if ($insertCustomer) {
-        redirect("?page=customer&action=index");
-    }
+        $insertCustomer =  db_query("CALL them_kh('" . $_POST["kh_name"] . "', '" . $_POST["kh_address"] . "', '" . $_POST["kh_phone"] . "' )");
+        
+        if ($insertCustomer) {
+            redirect("?page=customer&action=index");
+        }
 }
 
 
@@ -34,7 +34,7 @@ if (isset($_POST['btn_add'])) {
 
     <!-- Main content -->
     <section class="content">
-        <form method="post" enctype="multipart/form-data">
+        <form id="createCustomer" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-primary">
@@ -44,15 +44,15 @@ if (isset($_POST['btn_add'])) {
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Tên khách hàng</label>
-                                <input type="text" name="nv_name" class="form-control" id="name" placeholder="Nhập tên khách hàng">
+                                <input type="text" name="kh_name" class="form-control" id="kh_name" placeholder="Nhập tên khách hàng">
                             </div>
                             <div class="form-group">
                                 <label for="address">Địa chỉ</label>
-                                <input type="text" name="nv_address" class="form-control" id="address" placeholder="Nhập địa chỉ">
+                                <input type="text" name="kh_address" class="form-control" id="kh_address" placeholder="Nhập địa chỉ">
                             </div>
                             <div class="form-group">
                                 <label for="phone">Số điện thoại</label>
-                                <input type="text" name="nv_phone" class="form-control" id="phone" placeholder="Nhập số điện thoại">
+                                <input type="text" name="kh_phone" class="form-control" id="kh_phone" placeholder="Nhập số điện thoại">
                             </div>
                             <div class=" row">
                                 <div class="col-12">

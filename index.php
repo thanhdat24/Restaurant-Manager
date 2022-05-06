@@ -11,6 +11,7 @@ require 'lib/url.php';
 require 'lib/database.php';
 require 'lib/number.php';
 require 'lib/template.php';
+require 'lib/menu.php';
 
 ?>
 

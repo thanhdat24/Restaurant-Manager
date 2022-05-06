@@ -1,12 +1,20 @@
 <?php
 $data = db_query("select * from thucan");
 // require 'db/connect.php';
-
+global $TenTA;
 if (isset($_POST['btn_add'])) {
-
-    $insertFood = db_query("CALL them_thucan('" . $_POST["food_name"] . "', '" . $_POST["food_money"] . "')");
-    if ($insertFood) {
-        redirect("?page=menu&action=index");
+    $TenTA = $_POST['food_name'];
+    if (!checkMenuExits($TenTA)) {
+        $insertFood = db_query("CALL them_thucan('" . $_POST["food_name"] . "', '" . $_POST["food_money"] . "')");
+        if ($insertFood) {
+            redirect("?page=menu&action=index");
+        } else {
+            $_SESSION['createFoodStatusMessage'] = "Món ăn đã tồn tại!";
+            $_SESSION['createFoodStatusCode'] = "error";
+        }
+    } else {
+        $_SESSION['createFoodStatusMessage'] = "Món ăn đã tồn tại!";
+        $_SESSION['createFoodStatusCode'] = "error";
     }
 }
 ?>
@@ -31,7 +39,7 @@ if (isset($_POST['btn_add'])) {
     </section>
     <!-- Main content -->
     <section class="content">
-        <form method="post" enctype="multipart/form-data">
+        <form id="createFood" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-primary">

@@ -1,3 +1,5 @@
-.my-admin-book-thumbnail {
-  width: 50px;
+.invalid-feedback {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
 }
