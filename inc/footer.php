@@ -5,8 +5,10 @@
 </div>
 </header>
 
-<!-- jQuery -->
+<!-- jQuery Validation -->
 <script src="./public/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./public/js/jquery.validate.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="./public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -30,12 +32,6 @@
 
 <!-- SWEETALERT2 JS -->
 <script src="public/js/sweetalert2.min.js"></script>
-
-<!-- JJquery Validate -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src="./public/js/jquery.validate.js"></script>
-
-
 
 <script>
     $(function() {
